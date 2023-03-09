@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login Register animation</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Formularios -->
+      <div class="forms-container">
+        <div class="forms-container-inner">
+          <form class="login-form">
+            <h2 class="title">Inicio de sesión</h2>
+            <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nombre de usuario" />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Contraseña" />
+            </div>
+            <input type="submit" value="INICIAR" class="btn solid" />
+            <p class="social-text">O</p>
+            <div class="social-options">
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+            </div>
+          </form>
+          <form class="register-form">
+            <h2 class="title">Registro</h2>
+            <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nombre de usuario" />
+            </div>
+            <div class="input-group">
+              <i class="fa-solid fa-at"></i>
+              <input type="text" placeholder="Correo" />
+            </div>
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Contraseña" />
+            </div>
+            <input type="submit" value="CREAR" class="btn solid" />
+            <p class="social-text">O</p>
+            <div class="social-options">
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Fin formularios -->
+
+      <!-- Paneles -->
+      <div class="panels-container">
+        <!-- panel de registro -->
+        <div class="panel left-panel">
+          <div class="panel-inner">
+            <h3>¿Aún no tienes una cuenta?</h3>
+            <p>
+              Únete y aprovecha todos los beneficios de formar parte de nuestra
+              comunidad
+            </p>
+            <button class="btn transparent" id="register-btn">Crear una</button>
+          </div>
+          <img src="img/fall_thyk.svg" class="image" alt="img-register" />
+        </div>
+        <!-- panel de inicio de sesion -->
+        <div class="panel right-panel">
+          <div class="panel-inner">
+            <h3>¿Tienes una cuenta?</h3>
+            <p>Ingresa con tu cuenta ahora</p>
+            <button class="btn transparent" id="login-btn">
+              Iniciar sesión
+            </button>
+          </div>
+          <img src="img/voice_control_ofo1.svg" class="image" alt="img-login" />
+        </div>
+      </div>
+      <!-- Fin paneles -->
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+* {
+  font-family: "League Spartan", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f5f9;
+  /* --theme: #08d9d6; */
+  --theme: #443c68;
+  --black-100: #222831;
+  --black-70: #393e46;
+  --black-50: #b4b0b0;
+  --black-30: #eaeaea;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: 45%;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, #18122b, #443c68);
+  transform: translateY(-50%);
+  z-index: 9;
+  transition: 1.4s ease-in-out;
+}
+
+.forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.forms-container-inner {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  display: grid;
+  grid-template-columns: 1fr;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  z-index: 8;
+  transition: 1s 0.5s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 5rem;
+  overflow: hidden;
+  transition: 0.2s 0.7s ease-in-out;
+}
+
+form.login-form {
+  z-index: 2;
+}
+
+form.register-form {
+  z-index: 1;
+  opacity: 0;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--black-100);
+  margin-bottom: 10px;
+}
+
+.input-group {
+  max-width: 380px;
+  width: 100%;
+  height: 55px;
+  background-color: var(--black-30);
+  margin: 10px 0;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 13% 87%;
+  padding: 0 0.8rem;
+}
+
+.input-group i {
+  text-align: center;
+  line-height: 55px;
+  color: var(--black-50);
+}
+
+.input-group input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--black-70);
+}
+
+.btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--theme);
+  color: var(--black-30);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #50467a;
+}
+
+.social-text {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.social-options {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border: 1px solid var(--black-70);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--black-70);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.panels-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 10;
+}
+
+.panel .panel-inner {
+  color: #ffffff;
+  transition: 0.9s 0.6s ease-in-out;
+}
+
+.panel h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.panel p {
+  font-size: 0.97rem;
+  padding: 0.5rem 0;
+}
+
+.left-panel {
+  padding: 3rem 17% 2rem 12%;
+  pointer-events: all;
+}
+
+.right-panel {
+  pointer-events: none;
+  padding: 3rem 12% 2rem 17%;
+}
+
+.image {
+  width: 100%;
+  transition: 1.1s 0.4s ease-in-out;
+}
+
+.btn.transparent {
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+}
+
+.right-panel .panel-inner,
+.right-panel .image {
+  transform: translateX(800px);
+}
+
+/* Animacion */
+
+.container.register-mode::before {
+  transform: translate(100%, -50%);
+  right: 52%;
+}
+
+.container.register-mode .left-panel .panel-inner,
+.container.register-mode .left-panel .image {
+  transform: translateX(-800px);
+}
+
+.container.register-mode .right-panel .panel-inner,
+.container.register-mode .right-panel .image {
+  transform: translateX(0);
+}
+
+.container.register-mode .left-panel {
+  pointer-events: none;
+}
+
+.container.register-mode .right-panel {
+  pointer-events: all;
+}
+
+.container.register-mode .forms-container-inner {
+  left: 25%;
+}
+
+.container.register-mode form.login-form {
+  z-index: 1;
+  opacity: 0;
+}
+
+.container.register-mode form.register-form {
+  z-index: 2;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 860px) {
+  .container {
+    min-height: 800px;
+    height: 100vh;
+  }
+
+  .container::before {
+    width: 1500px;
+    height: 1500px;
+    left: 30%;
+    bottom: 65%;
+    transform: translateX(-50%);
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+
+  .forms-container-inner {
+    width: 100%;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -100%);
+  }
+
+  .panels-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+
+  .right-panel .panel-inner,
+  .right-panel .image {
+    transform: translateY(300px);
+  }
+
+  .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+  }
+
+  .panel .panel-inner {
+    padding-right: 15%;
+  }
+
+  .panel h3 {
+    font-size: 1.2rem;
+  }
+
+  .panel p {
+    font-size: 0.7rem;
+  }
+
+  .btn.transparent {
+    font-size: 0.7rem;
+    width: 110px;
+    height: 35px;
+  }
+
+  .left-panel {
+    grid-row: 1/2;
+  }
+
+  .right-panel {
+    grid-row: 3/4;
+  }
+
+  .image {
+    width: 200px;
+    transition: 0.9s 0.6s ease-in-out;
+  }
+
+  .container.register-mode::before {
+    transform: translate(-50%, 100%);
+    bottom: 30%;
+    right: initial;
+  }
+
+  .container.register-mode .forms-container-inner {
+    left: 50%;
+    transform: translate(-50%, -160%);
+  }
+
+  .container.register-mode .left-panel .panel-inner,
+  .container.register-mode .left-panel .image {
+    transform: translateY(-350px);
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  form {
+    padding: 0 1.5rem;
+  }
+
+  .image {
+    display: none;
+  }
+
+  .panel .panel-inner {
+    padding: 0.5rem 1rem;
+  }
+
+  .container::before {
+    bottom: 70%;
+    left: 50%;
+  }
+
+  .container.register-mode::before {
+    bottom: 25%;
+  }
+}
